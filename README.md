@@ -13,7 +13,6 @@ CinemaShare is a lightweight, self-hosted media server application built with **
 *   **Automatic Tunneling:** Programmatically starts Localtunnel or Cloudflare Tunnel on boot.
 *   **Access Security:** Custom admin authentication, read-only guest mode, rate limiting, and IP filtering.
 
----
 
 ## 🚦 Getting Started
 
