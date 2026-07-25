@@ -1,6 +1,6 @@
 # CinemaShare - Self-Hosted Media Server
 
-CinemaShare is a lightweight, self-hosted media server application built with **Node.js + Express** on the backend and **React (Vite) + Tailwind CSS** on the frontend. It is designed to run locally on your PC, scan a media folder, and dynamically expose it to the internet using tunneling services (Cloudflare Tunnel or Localtunnel).
+CinemaShare is a lightweight, self-hosted media server application built with **Node.js + Express** on the backend and **React (Vite) + Tailwind CSS** on the frontend. It is designed to run locally on your PC, scan a media folder, and dynamically expose it to the internet using tunneling services (Cloudflare Tunnel or Localtunnel).wow
 
 ---
 
