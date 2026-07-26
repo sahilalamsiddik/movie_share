@@ -6,9 +6,9 @@ import { useAppStore } from './store/appStore';
 import Layout from './components/Layout';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import Browser from './pages/Browser';
 
 // Placeholder pages to allow routing to succeed (will be implemented in Day 4)
-const Browser = () => <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm"><h2 className="text-xl font-bold">File Browser (Coming in Day 4)</h2></div>;
 const Settings = () => <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm"><h2 className="text-xl font-bold">Settings Panel (Coming in Day 4)</h2></div>;
 const Logs = () => <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm"><h2 className="text-xl font-bold">Activity Terminal (Coming in Day 4)</h2></div>;
 
@@ -136,3 +136,4 @@ export default function App() {
     </BrowserRouter>
   );
 }
+
