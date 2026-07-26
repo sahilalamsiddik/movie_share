@@ -8,9 +8,9 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Browser from './pages/Browser';
 import Settings from './pages/Settings';
+import Logs from './pages/Logs';
 
 // Placeholder pages to allow routing to succeed (will be implemented in Day 4)
-const Logs = () => <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm"><h2 className="text-xl font-bold">Activity Terminal (Coming in Day 4)</h2></div>;
 
 function ProtectedRoute({ children }) {
   const isAuthenticated = useAppStore(state => state.isAuthenticated);
