@@ -10,7 +10,6 @@ import Browser from './pages/Browser';
 import Settings from './pages/Settings';
 import Logs from './pages/Logs';
 
-// Placeholder pages to allow routing to succeed (will be implemented in Day 4)
 
 function ProtectedRoute({ children }) {
   const isAuthenticated = useAppStore(state => state.isAuthenticated);

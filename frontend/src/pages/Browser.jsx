@@ -168,13 +168,17 @@ function ItemActions({ item, onPlay }) {
 }
 
 function GridItem({ item, onOpen, onPlay }) {
+  const token = useAppStore(state => state.token);
   const isVideo = item.type === 'video';
+  const thumbnailUrl = isVideo
+    ? `/api/stream/thumbnail?path=${encodeURIComponent(item.relativePath)}&token=${token}`
+    : null;
 
   return (
     <div className="group rounded-lg border border-slate-200 bg-white p-4 shadow-sm transition hover:border-brand-200 hover:shadow-md">
       <button onClick={() => onOpen(item)} className="mb-4 flex aspect-video w-full items-center justify-center rounded-lg bg-slate-100 text-slate-400">
-        {item.thumbnail ? (
-          <img src={item.thumbnail} alt="" className="h-full w-full rounded-lg object-cover" />
+        {thumbnailUrl ? (
+          <img src={thumbnailUrl} alt="" className="h-full w-full rounded-lg object-cover" loading="lazy" />
         ) : item.isDirectory ? (
           <Folder className="h-12 w-12 text-amber-500" />
         ) : (
@@ -196,7 +200,7 @@ function GridItem({ item, onOpen, onPlay }) {
 
 function ListItem({ item, onOpen, onPlay }) {
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_110px_110px_auto] items-center gap-3 border-b border-slate-100 px-4 py-3 last:border-b-0">
+    <div className="grid gap-3 border-b border-slate-100 px-4 py-3 last:border-b-0 md:grid-cols-[minmax(0,1fr)_110px_110px_auto] md:items-center">
       <button onClick={() => onOpen(item)} className="flex min-w-0 items-center gap-3 text-left">
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-slate-100">
           {item.isDirectory ? <Folder className="h-5 w-5 text-amber-500" /> : <FileVideo className="h-5 w-5 text-brand-500" />}
@@ -206,8 +210,8 @@ function ListItem({ item, onOpen, onPlay }) {
           <span className="block truncate text-xs font-medium text-slate-500">{item.relativePath}</span>
         </span>
       </button>
-      <span className="text-sm font-semibold text-slate-500">{item.isDirectory ? 'Folder' : formatBytes(item.size)}</span>
-      <span className="text-sm font-semibold text-slate-500">{formatDate(item.mtime)}</span>
+      <span className="hidden text-sm font-semibold text-slate-500 md:block">{item.isDirectory ? 'Folder' : formatBytes(item.size)}</span>
+      <span className="hidden text-sm font-semibold text-slate-500 md:block">{formatDate(item.mtime)}</span>
       <ItemActions item={item} onPlay={onPlay} />
     </div>
   );
